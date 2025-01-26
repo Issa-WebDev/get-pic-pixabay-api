@@ -3,12 +3,15 @@ import { FiDownload } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
 
 // https://pixabay.com/api/?key=48466442-ea1cdeffab6f92f6dd28f179e&q=yellow+flowers&image_type=phot
-const apiKey = import.meta.env.VITE_API_KEY;
-const apiUrl = import.meta.env.VITE_API_URL;
+// const apiKey = import.meta.env.VITE_API_KEY;
+// const apiUrl = import.meta.env.VITE_API_URL;
 
 const App = () => {
   const [imagesData, setImagesData] = useState([]);
   const [query, setQuey] = useState("");
+
+  const apiKey = "48466442-ea1cdeffab6f92f6dd28f179e";
+  const apiUrl = "https://pixabay.com/api/";
 
   const fetchImages = async (query) => {
     const endpoint = encodeURIComponent(query);
@@ -34,7 +37,7 @@ const App = () => {
 
   return (
     <div>
-      <header className="flex justify-between py-2 items-center fixed top-0 left-0 right-0 bg-blue-500 shadow-md px-4 md:px-10">
+      <header className="flex z-index-10 justify-between py-2 items-center fixed top-0 left-0 right-0 bg-blue-500 shadow-md px-4 md:px-10">
         <div className="w-12 md:w-20">
           <img src="/getpic.png" alt="logo" className="w-full" />
         </div>
