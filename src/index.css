@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-html {
-   font-family: cursive, "sans-serif";
+body {
+  font-family: 'Poppins', sans-serif;
 }
