@@ -7,7 +7,7 @@ const ImagesBox = () => {
   return (
     <section className="px-4 md:px-10 py-[20px]">
       <h1 className="text-2xl text-gray-800 font-bold py-8">Stock D'images gratuit.</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {imagesData.map(({ id, largeImageURL, user, userImageURL }) => (
           <div key={id} className="relative rounded-lg h-[500px]">
             <div className="w-full h-full overflow-hidden">
