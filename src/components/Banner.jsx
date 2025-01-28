@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <section className="relative w-full h-[50vh] md:h-[68vh]">
+    <section className="relative w-full h-[68vh]">
       <img
         src="/flowerBanner.jpg"
         alt="banner"

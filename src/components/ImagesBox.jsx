@@ -6,7 +6,10 @@ const ImagesBox = () => {
   const { imagesData } = useContext(DataContext);
   return (
     <section className="px-4 md:px-10 py-[20px]">
-      <h1 className="text-2xl text-gray-800 font-bold py-8">Stock D'images gratuit.</h1>
+      <h1 className="text-2xl text-gray-800 font-semibold py-8">
+        Free Stock Photos
+      </h1>
+      <hr className="mb-12 text-gray-400"/>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {imagesData.map(({ id, largeImageURL, user, userImageURL }) => (
           <div key={id} className="relative rounded-lg h-[500px]">
