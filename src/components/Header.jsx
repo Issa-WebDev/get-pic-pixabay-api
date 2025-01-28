@@ -27,7 +27,7 @@ const Header = () => {
       </nav>
 
       <div className="flex flex-col items-center justify-center pt-30">
-        <h1 className="text-3xl lg:text-4xl font-normal md:font-semibold text-white w-[100%] lg:w-[48%] pb-6 md:pb-8">
+        <h1 className="text-[2rem] lg:text-4xl font-normal pt-16 md:pt-0 md:font-semibold text-white w-[100%] lg:w-[48%] pb-6 md:pb-8">
           Royalty-free and free photos, shared by talented creators.
         </h1>
         <form

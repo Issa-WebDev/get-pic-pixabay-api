@@ -30,14 +30,14 @@ const HeaderOnScroll = () => {
     <header
       className={`${
         showNav ? "flex" : "hidden"
-      } fixed z-20 top-0 left-0 right-0 items-center justify-between shadow-md bg-white py-4 px-4 md:px-10 md:px-10"`}
+      } fixed z-20 top-0 left-0 right-0 items-center justify-between shadow-md bg-white py-3 px-4 md:px-10 md:px-10"`}
     >
       {/* hidden search input */}
       <form
         onSubmit={handleSubmit}
         className={`abolute w-full ${
           openSearch ? "flex" : "hidden"
-        } md:hidden bg-white items-center justify-between rounded-xl border-2 border-gray-300`}
+        } md:hidden bg-white items-center justify-between py-1 rounded-xl border-2 border-gray-300`}
       >
         <input
           type="text"
@@ -47,17 +47,17 @@ const HeaderOnScroll = () => {
           className="font-semibold border-0 h-full px-2 py-3 outline-0 text-gray-500"
         />
 
-        <div className="flex gap-x-1 items-center mr-1">
-          <button>
+        <div className="flex gap-x-1 items-center mr-2">
+          <button type="button">
             <IoClose
               size={40}
-              className="cursor-pointer  w-10 rounded-xl py-2  h-10 bg-black text-white transition-all duration-500 flex items-center justify-center "
+              className="cursor-pointer  w-8 rounded-xl py-2  h-10 bg-black text-white transition-all duration-500 flex items-center justify-center "
               onClick={() => setOpenSearch(false)}
             />
           </button>
           <button
             type="submit"
-            className="cursor-pointer py-2  rounded-xl h-10 w-10 bg-black text-white transition-all duration-500 flex items-center justify-center "
+            className="cursor-pointer py-2  rounded-xl h-10 w-8 bg-black text-white transition-all duration-500 flex items-center justify-center "
           >
             <IoSearch size={23} />
           </button>
