@@ -5,11 +5,11 @@ import { FiDownload } from "react-icons/fi";
 const ImagesBox = () => {
   const { imagesData } = useContext(DataContext);
   return (
-    <section className="px-4 md:px-10 py-[20px]">
-      <h1 className="text-2xl text-gray-800 font-semibold py-8">
+    <section className="px-4 md:px-10 py-[20px] dark:bg-[#222]">
+      <h1 className="text-2xl dark:text-white text-gray-800 font-semibold py-8">
         Free Stock Photos
       </h1>
-      <hr className="mb-12 text-gray-400"/>
+      <hr className="mb-12 text-gray-400" />
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {imagesData.map(({ id, largeImageURL, user, userImageURL }) => (
           <div key={id} className="relative rounded-lg h-[500px]">
@@ -24,7 +24,7 @@ const ImagesBox = () => {
             </div>
             <div className="absolute flex items-center bottom-0 left-0 right-0 p-5">
               <div className="flex items-center flex-1">
-                <div className="overflow-hidden w-[50px] h-[50px] rounded-full">
+                <div className="overflow-hidden w-[50px]  h-[50px] rounded-full">
                   <img
                     src={userImageURL}
                     className="w-full text-white"

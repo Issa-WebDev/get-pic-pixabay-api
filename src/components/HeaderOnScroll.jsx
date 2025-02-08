@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
 import { IoClose, IoSearch } from "react-icons/io5";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 import { DataContext } from "../FetchAPI";
+import { useTheme } from "../ThemeContext";
 
 const HeaderOnScroll = () => {
   const { query, setQuery, fetchImages } = useContext(DataContext);
+  const { theme, ToggleTheme } = useTheme();
   const [showNav, setShowNav] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
 
@@ -30,34 +33,34 @@ const HeaderOnScroll = () => {
     <header
       className={`${
         showNav ? "flex" : "hidden"
-      } fixed z-20 top-0 left-0 right-0 items-center justify-between shadow-md bg-white py-3 px-4 md:px-10 md:px-10"`}
+      } fixed z-20 top-0 left-0 right-0 items-center justify-between shadow-md bg-white dark:bg-black py-4 px-4 md:px-10 md:px-10"`}
     >
       {/* hidden search input */}
       <form
         onSubmit={handleSubmit}
         className={`abolute w-full ${
           openSearch ? "flex" : "hidden"
-        } md:hidden bg-white items-center justify-between py-1 rounded-xl border-2 border-gray-300`}
+        } md:hidden bg-white dark:bg-[#111] items-center justify-between py-1 rounded-xl border-2 border-gray-300`}
       >
         <input
           type="text"
           placeholder="Search for free photos"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="font-semibold border-0 h-full px-2 py-3 outline-0 text-gray-500"
+          className="font-semibold border-0 h-full px-2 py-1 outline-0 text-gray-500 dark:text-white"
         />
 
         <div className="flex gap-x-1 items-center mr-2">
-          <button type="button">
-            <IoClose
-              size={40}
-              className="cursor-pointer  w-8 rounded-xl py-2  h-10 bg-black text-white transition-all duration-500 flex items-center justify-center "
-              onClick={() => setOpenSearch(false)}
-            />
+          <button
+            type="button"
+            className="cursor-pointer  px-1 md:px-3 py-1 md:py-3 rounded-full bg-black dark:bg-white dark:text-black text-white transition-all duration-500 flex items-center justify-center "
+            onClick={() => setOpenSearch(false)}
+          >
+            <IoClose size={23} />
           </button>
           <button
             type="submit"
-            className="cursor-pointer py-2  rounded-xl h-10 w-8 bg-black text-white transition-all duration-500 flex items-center justify-center "
+            className="cursor-pointer px-1 md:px-3 py-1 md:py-3 rounded-full dark:bg-white dark:text-black bg-black text-white transition-all duration-500 flex items-center justify-center "
           >
             <IoSearch size={23} />
           </button>
@@ -67,7 +70,7 @@ const HeaderOnScroll = () => {
       {/* hidden search input */}
 
       <h1
-        className={`logo md:block text-2xl md:text-3xl italic text-black font-bold ${
+        className={`logo md:block text-2xl md:text-3xl italic dark:text-white text-black font-bold ${
           openSearch ? "hidden" : "block"
         }`}
       >
@@ -80,7 +83,7 @@ const HeaderOnScroll = () => {
       >
         <button
           type="submit"
-          className="absolute cursor-pointer top-[30%] left-3 pr-2 border-r-2 border-gray-200"
+          className="absolute cursor-pointer dark:text-white top-[30%] left-3 pr-2 border-r-2 border-gray-200"
         >
           <IoSearch size={20} />
         </button>
@@ -89,7 +92,7 @@ const HeaderOnScroll = () => {
           placeholder="Search for free photos"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="flex-1 pl-14 px-4  py-2 rounded-xl border-2 border-gray-300 focus:outline-3 outline-blue-200 font-bold bg-white text-gray-500"
+          className="flex-1 pl-14 px-4  py-2 rounded-xl border-2 border-gray-300 focus:outline-2 outline-blue-200 font-bold bg-white dark:text-white dark:bg-[#111] text-gray-500"
         />
       </form>
 
@@ -97,7 +100,7 @@ const HeaderOnScroll = () => {
         <button
           type="submit"
           onClick={handleSearchFormShow}
-          className={`cursor-pointer md:hidden  px-3 py-[10px] flex items-center justify-center bg-black text-white rounded-xl transition-all duration-500 ${
+          className={`cursor-pointer md:hidden px-2 md:px-3 py-2 md:py-3 flex items-center justify-center bg-black dark:bg-white dark:text-black text-white rounded-full transition-all duration-500 ${
             openSearch ? "hidden" : "block"
           }`}
         >
@@ -106,9 +109,15 @@ const HeaderOnScroll = () => {
         <button
           className={`md:block ${
             openSearch ? "hidden" : "block"
-          } px-6 py-2 bg-black rounded-lg font-semibold hover:opacity-90 transition-all duration-500 cursor-pointer text-white`}
+          } flex items-center justify-center px-2 md:px-3 py-2 md:py-3 bg-black rounded-full font-semibold hover:opacity-90 transition-all dark:bg-white duration-500 cursor-pointer text-white dark:text-black`}
         >
-          Upload
+          <span onClick={ToggleTheme}>
+            {theme ? (
+              <MdOutlineLightMode size={18} />
+            ) : (
+              <MdOutlineDarkMode size={18} />
+            )}
+          </span>
         </button>
       </div>
     </header>

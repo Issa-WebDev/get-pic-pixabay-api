@@ -8,16 +8,12 @@ export const ThemeProvider = ({ children }) => {
   );
 
   const ToggleTheme = () => {
-    setTheme(true);
+    setTheme((prevTheme) => !prevTheme);
+    console.log(theme);
   };
 
   useEffect(() => {
-    if (theme) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-
+    document.documentElement.classList.toggle("dark", theme);
     localStorage.setItem("darkMode", theme);
   }, [theme]);
 

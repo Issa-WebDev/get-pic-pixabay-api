@@ -8,7 +8,7 @@ const Banner = () => {
         alt="banner"
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 dark:bg-black/70 bg-black/20"></div>
     </section>
   );
 };
