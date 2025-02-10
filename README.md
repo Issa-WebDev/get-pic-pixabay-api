@@ -13,7 +13,7 @@ A simple image search app built with React and Tailwind CSS, using the Pixabay A
 
 ## 📸 Screenshot
 
-![Get Pic App](./thumb.png) <!-- Mets ici une capture d'écran -->
+![Get Pic App](./thumb.png) 
 
 ## 🔧 How to run the project
 
