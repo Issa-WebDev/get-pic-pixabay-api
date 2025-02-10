@@ -20,8 +20,8 @@ A simple image search app built with React and Tailwind CSS, using the Pixabay A
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Issa-WebDev/Render-search-images-pexels-API-.git
-cd Render-search-images-pexels-API-
+git clone https://github.com/Issa-WebDev/get-pic-pixabay-api.git
+cd get-pic-pixabay-api
 ```
 
 2. Install dependencies:
