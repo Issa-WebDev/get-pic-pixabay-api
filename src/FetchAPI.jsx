@@ -19,7 +19,7 @@ const FetchDataProvider = ({ children }) => {
     const endpoint = encodeURIComponent(query);
     try {
       const response = await fetch(
-        `${apiUrl}?key=${apiKey}&q=${endpoint}&image_type=photo&per_page=21`
+        `${apiUrl}?key=${apiKey}&q=${endpoint}&image_type=photo&per_page=50`
       );
       const data = await response.json();
       if (data && data.hits.length > 0) {
